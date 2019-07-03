@@ -1,0 +1,38 @@
+{
+  "name": "github-page",
+  "version": "0.0.0-private",
+  "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
+  "license": "MIT",
+  "description": "github-pages boilerplate single page application",
+  "homepage": "https://github.com/ivoputzer/github-page#readme",
+  "bugs": {
+    "url": "https://github.com/ivoputzer/github-page/issues"
+  },
+  "keywords": [
+    "github",
+    "single",
+    "page",
+    "application",
+    "boilerplate"
+  ],
+  "main": "index.html",
+  "scripts": {
+    "deploy": "gh-pages -d dist -u \"$npm_package_author\"",
+    "build": "parcel build --public-url ./ $npm_package_main",
+    "start": "parcel $npm_package_main --open"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "parcel": "^1.12.3"
+  },
+  "standard": {
+    "ignore": [
+      "dist/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivoputzer/github-page.git"
+  }
+}
