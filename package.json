@@ -15,11 +15,11 @@
     "application",
     "boilerplate"
   ],
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist -u \"$npm_package_author\"",
-    "build": "parcel build --public-url ./ $npm_package_main",
-    "start": "parcel $npm_package_main --open"
+    "deploy": "gh-pages -d dist -u \"Ivo von Putzer Reibegg <ivo.putzer@gmail.com>\"",
+    "build": "parcel build --public-url ./ index.html",
+    "start": "parcel index.html --open"
   },
   "dependencies": {},
   "devDependencies": {
