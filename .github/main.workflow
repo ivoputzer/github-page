@@ -19,4 +19,7 @@ action "deploy" {
   secrets = ["GITHUB_TOKEN"]
   uses = "actions/npm@master"
   args = "run-script deploy"
+  env = {
+    NODE_DEBUG = "gh-pages"
+  }
 }
