@@ -18,7 +18,7 @@
   "main": "index.js",
   "scripts": {
     "node": "node",
-    "deploy": "env; gh-pages --repo https://${GITHUB_TOKEN}@github.com/ivoputzer/github-page.git --dist dist --user \"Ivo von Putzer Reibegg <ivo.putzer@gmail.com>\"",
+    "deploy": "gh-pages --dist ./dist --user \"Ivo von Putzer Reibegg <ivo.putzer@gmail.com>\"",
     "build": "parcel build --public-url ./ index.html",
     "start": "parcel index.html --open"
   },
