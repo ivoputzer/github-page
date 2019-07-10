@@ -18,9 +18,9 @@
   "main": "index.js",
   "scripts": {
     "node": "node",
-    "deploy": "gh-pages --dist ./dist --user \"Ivo von Putzer Reibegg <ivo.putzer@gmail.com>\"",
+    "deploy": "gh-pages --dist ./dist --user \"$npm_package_author_name <$npm_package_author_email>\"",
     "build": "parcel build --public-url ./ index.html",
-    "start": "parcel index.html --open"
+    "start": "parcel --open index.html"
   },
   "dependencies": {},
   "devDependencies": {
