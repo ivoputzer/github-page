@@ -14,7 +14,13 @@ action "build" {
   args = "run-script build"
 }
 
-action "deploy" {
+action "master" {
+  needs = "build"
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
+action "master" {
   needs = "build"
   secrets = ["GITHUB_TOKEN"]
   uses = "actions/npm@master"
