@@ -1,21 +1,27 @@
 workflow "Github Pages" {
   on = "push"
-  resolves = ["deploy"]
-}
-
-action "master" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
+  resolves = ["test", "deploy"]
 }
 
 action "install" {
-  needs = "master"
   uses = "actions/npm@master"
   args = "install"
 }
 
-action "build" {
+action "test" {
   needs = "install"
+  uses = "actions/npm@master"
+  args = "test"
+}
+
+action "master" {
+  needs = "install"
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
+action "build" {
+  needs = "master"
   uses = "actions/npm@master"
   args = "run-script build"
 }

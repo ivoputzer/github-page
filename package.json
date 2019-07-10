@@ -18,6 +18,7 @@
   "main": "index.js",
   "scripts": {
     "node": "node",
+    "test": "m.test",
     "deploy": "gh-pages --dist ./dist --user \"$npm_package_author_name <$npm_package_author_email>\"",
     "build": "parcel build --public-url ./ index.html",
     "start": "parcel --open index.html"
@@ -25,9 +26,13 @@
   "dependencies": {},
   "devDependencies": {
     "gh-pages": "^2.0.1",
+    "m.test": "0.0.58",
     "parcel": "^1.12.3"
   },
   "standard": {
+    "global": [
+      "test"
+    ],
     "ignore": [
       "dist/"
     ]
