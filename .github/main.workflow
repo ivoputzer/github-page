@@ -1,17 +1,11 @@
 workflow "Github Pages" {
   on = "push"
-  resolves = ["test", "deploy"]
+  resolves = ["deploy"]
 }
 
 action "install" {
   uses = "actions/npm@master"
   args = "install"
-}
-
-action "test" {
-  needs = "install"
-  uses = "actions/npm@master"
-  args = "test"
 }
 
 action "master" {
