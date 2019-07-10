@@ -3,19 +3,19 @@ workflow "Github Pages" {
   resolves = ["deploy"]
 }
 
-action "install" {
-  uses = "actions/npm@master"
-  args = "install"
-}
-
 action "master" {
-  needs = "install"
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
 
-action "build" {
+action "install" {
   needs = "master"
+  uses = "actions/npm@master"
+  args = "install"
+}
+
+action "build" {
+  needs = "install"
   uses = "actions/npm@master"
   args = "run-script build"
 }
