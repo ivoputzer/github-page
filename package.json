@@ -19,7 +19,7 @@
   "scripts": {
     "node": "node",
     "test": "m.test",
-    "deploy": "gh-pages --dist ./dist --user \"$npm_package_author_name <$npm_package_author_email>\"",
+    "deploy": "env; gh-pages --dist ./dist --repo \"https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git\" --user \"${GITHUB_ACTOR} <${GITHUB_ACTOR}@users.noreply.github.com>\"",
     "build": "parcel build --public-url ./ index.html",
     "start": "parcel --open index.html"
   },
