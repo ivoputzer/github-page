@@ -3,7 +3,13 @@ workflow "Github Pages" {
   resolves = ["deploy"]
 }
 
+action "master" {
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
 action "install" {
+  needs = "master"
   uses = "actions/npm@master"
   args = "install"
 }
@@ -14,13 +20,7 @@ action "build" {
   args = "run-script build"
 }
 
-action "master" {
-  needs = "build"
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
-
-action "master" {
+action "deploy" {
   needs = "build"
   secrets = ["GITHUB_TOKEN"]
   uses = "actions/npm@master"
