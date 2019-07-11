@@ -1,6 +1,6 @@
 const fragment = document.createDocumentFragment()
-const text = document.createTextNode('✅ Javascript application')
-const h1 = document.createElement('h2')
+const text = document.createTextNode('✅ application')
+const h1 = document.createElement('h3')
 
 h1.appendChild(text)
 fragment.appendChild(h1)

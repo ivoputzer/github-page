@@ -17,14 +17,11 @@
   ],
   "main": "index.js",
   "scripts": {
-    "node": "node",
-    "deploy": "env; gh-pages --dist ./dist --repo \"https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git\" --user \"${GITHUB_ACTOR} <${GITHUB_ACTOR}@users.noreply.github.com>\"",
     "build": "parcel build --public-url ./ index.html",
     "start": "parcel --open index.html"
   },
   "dependencies": {},
   "devDependencies": {
-    "gh-pages": "^2.0.1",
     "parcel": "^1.12.3"
   },
   "standard": {

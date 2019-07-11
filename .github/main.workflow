@@ -24,10 +24,9 @@ action "deploy" {
   uses = "ivoputzer/github-pages-deploy-action@master"
   needs = "build"
   env = {
-    BUILD_SCRIPT = "npm run-script build"
+    BUILD_SCRIPT = "npm run build"
     BRANCH = "gh-pages"
     FOLDER = "dist"
-    ACCESS_TOKEN = ""
   }
   secrets = ["GITHUB_TOKEN"]
 }
