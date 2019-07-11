@@ -21,11 +21,11 @@ action "build" {
 }
 
 action "deploy" {
-  needs = "build"
-  secrets = ["GITHUB_TOKEN"]
-  uses = "actions/npm@master"
-  args = "run-script deploy"
+  uses = "JamesIves/github-pages-deploy-action@master"
   env = {
-    NODE_DEBUG = "gh-pages"
+    BUILD_SCRIPT = "npm run-script build"
+    BRANCH = "gh-pages"
+    FOLDER = "dist"
   }
+  secrets = ["GITHUB_TOKEN"]
 }
