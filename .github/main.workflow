@@ -21,12 +21,11 @@ action "build" {
 }
 
 action "deploy" {
-  uses = "ivoputzer/github-pages-deploy-action@master"
+  uses = "actions/npm@master"
   needs = "build"
+  args = "run-script deploy"
   env = {
-    BUILD_SCRIPT = "npm run build"
-    BRANCH = "gh-pages"
-    FOLDER = "dist"
+    NODE_DEBUG = "gh-pages"
   }
   secrets = ["GITHUB_TOKEN"]
 }
