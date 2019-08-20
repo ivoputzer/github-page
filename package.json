@@ -19,7 +19,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist -b gh-pages -u \"github-actions-bot <support+actions@github.com>\"",
-    "build": "parcel build --public-url ./ index.html",
+    "build": "parcel build --public-url ./ index.html; echo \"---\npermalink: /index.html\n---\" >> dist/readme.md",
     "start": "parcel --open index.html"
   },
   "devDependencies": {
