@@ -18,7 +18,6 @@
   ],
   "main": "index.js",
   "scripts": {
-    "node": "node",
     "deploy": "gh-pages -d dist/ -r https://${GITHUB_TOKEN}@github.com/ivoputzer/github-page.git",
     "build": "parcel build --public-url ./ index.html",
     "start": "parcel --open index.html"
