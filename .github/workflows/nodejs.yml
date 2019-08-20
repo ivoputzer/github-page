@@ -19,5 +19,6 @@ jobs:
         npm run build --if-present
         git config --global user.email "support+actions@github.com"
         git config --global user.name "github-actions-bot"
+        echo "GH_PAGES $GH_PAGES"
         npm run deploy
 
