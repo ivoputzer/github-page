@@ -25,7 +25,7 @@ jobs:
         echo "GITHUB_REF $GITHUB_REF"
         echo "GITHUB_HEAD_REF $GITHUB_HEAD_REF"
         echo "GITHUB_BASE_REF $GITHUB_BASE_REF"
-        curl --request POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" --url "https://api.github.com/repos/$GITHUB_REPOSITORY/pages/builds"
+        curl --silent --request POST -H "Accept: application/json" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" --url "https://api.github.com/repos/$GITHUB_REPOSITORY/pages/builds"
         # npm install
         # npm run build --if-present
         # git config --global user.email "support+actions@github.com"
