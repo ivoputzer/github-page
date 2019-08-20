@@ -18,8 +18,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist -b gh-pages",
-    "build": "parcel build --public-url ./ index.html; echo \"---\npermalink: /index.html\n---\" >> dist/readme.md",
+    "deploy": "gh-pages -d dist",
+    "build": "parcel build --public-url ./ index.html",
     "start": "parcel --open index.html"
   },
   "devDependencies": {
