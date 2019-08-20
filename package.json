@@ -2,9 +2,10 @@
   "name": "github-page",
   "version": "0.0.0-private",
   "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
-  "license": "MIT",
   "description": "github-pages boilerplate single page application",
   "homepage": "https://github.com/ivoputzer/github-page#readme",
+  "private": true,
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/ivoputzer/github-page/issues"
   },
@@ -22,9 +23,8 @@
     "build": "parcel build --public-url ./ index.html",
     "start": "parcel --open index.html"
   },
-  "dependencies": {},
   "devDependencies": {
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^2.1.1",
     "parcel": "^1.12.3"
   },
   "standard": {

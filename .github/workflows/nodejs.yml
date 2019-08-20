@@ -1,9 +1,16 @@
-name: Node CI
-
+name: Deploy Github Pages
 on: [push]
-
 jobs:
-  my_first_job:
-    name: My first job
-  my_second_job:
-    name: My second job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+       node-version: 12.x
+    - name: npm install, build, and deploy
+      run: |
+        npm install
+        npm run build --if-present
+        npm run deploy
+
