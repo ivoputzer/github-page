@@ -13,13 +13,10 @@ jobs:
     - name: npm install, build and deploy
       env:
         NODE_DEBUG: gh-pages
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
-        echo "-----------"
-        echo -n "${GITHUB_TOKEN}" | wc -c
-        echo "-----------"
+        # curl --request POST -H 'authorization: token ${ACCESS_TOKEN}' -H 'content-type: application/json' --url https://api.github.com/authorizations
         npm install
         npm run build --if-present
-        npm run deploy -- --repo "https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --user "github-actions-bot <support+actions@github.com>"
-        curl --silent --request POST -H "Accept: application/vnd.github.mister-fantastic-preview+json" -H "Authorization: token ${GITHUB_TOKEN}" --url "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds"
+        npm run deploy -- --repo "https://git:${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --user "github-actions-bot <support+actions@github.com>"
 
