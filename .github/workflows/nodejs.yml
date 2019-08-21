@@ -15,9 +15,9 @@ jobs:
         NODE_DEBUG: gh-pages
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
-        # curl --request POST -H 'authorization: token ${ACCESS_TOKEN}' -H 'content-type: application/json' --url https://api.github.com/authorizations
         npm install
         npm run build --if-present
+        touch dist/.nojekyll
         echo "---\npermalink: /index.html\n---" > dist/readme.md
         npm run deploy -- --repo "https://git:${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --user "Github Actions Bot <support+actions@github.com>"
 
