@@ -15,6 +15,9 @@ jobs:
         NODE_DEBUG: gh-pages
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        echo "-----------"
+        echo -n "${GITHUB_TOKEN}" | wc -c
+        echo "-----------"
         npm install
         npm run build --if-present
         npm run deploy -- --repo "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --user "github-actions-bot <support+actions@github.com>"
