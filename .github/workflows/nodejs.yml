@@ -20,6 +20,6 @@ jobs:
         echo "-----------"
         npm install
         npm run build --if-present
-        npm run deploy -- --user "github-actions-bot <support+actions@github.com>"
+        npm run deploy -- --repo "https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" --user "github-actions-bot <support+actions@github.com>"
         curl --silent --request POST -H "Accept: application/vnd.github.mister-fantastic-preview+json" -H "Authorization: token ${GITHUB_TOKEN}" --url "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds"
 
